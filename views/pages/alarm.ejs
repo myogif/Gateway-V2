@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+  <%- include('../partials/sidebar'); %>
+  <form action="">
+    <div class="main">
+      <h1>Register</h1>
+      <p>Please fill in this form to setting a reader</p>
+      <hr>
+  
+      <label for="url"><b>URL  </b></label>
+      <input type="text" placeholder="Enter Url" name="url" id="url" required>
+  
+      <label for="api_key"><b>Api Key</b></label>
+      <input type="text" placeholder="Enter api key" name="api_key" id="api_key" >
+
+      <label for="id_account"><b>ID account</b></label>
+      <input type="text" placeholder="Enter ID account" name="id_account" id="id_account" >
+
+      <button type="submit" class="Savebtn">Save</button>
+    </div>
+  </form>
+
+
+</body>
+</html>

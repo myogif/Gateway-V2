@@ -96,3 +96,23 @@ input[type=text]:focus{
 .Savebtn:hover{
   opacity: 1;
 }
+
+
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+}
+
+
+@media screen and (max-widt: 1000px){
+  .main,
+  aside{
+      width: 100%;
+      padding: 0;
+  }
+  .container{
+      display: block;
+  }
+
+}

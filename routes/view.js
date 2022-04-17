@@ -9,6 +9,14 @@ router.get('/setting', (req, res) =>{
   res.render('pages/setting');
 });
 
+router.get('/api', (req, res) =>{
+  res.render('pages/api');
+});
+
+
+router.get('/alarm', (req, res) =>{
+  res.render('pages/alarm');
+});
 module.exports = router;
 
 
