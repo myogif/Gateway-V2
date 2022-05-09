@@ -6,7 +6,8 @@ module.exports = {
        id:{
          type: Sequelize.INTEGER,
          primaryKey: true,
-         allowNull: false
+         allowNull: false,
+         autoIncrement: true
        },
        reader_id: {
          type: Sequelize.STRING,
@@ -23,6 +24,10 @@ module.exports = {
        api_server: {
          type: Sequelize.STRING,
          allowNull: true
+       },
+       mode:{
+         type: Sequelize.STRING,
+         allowNull: false
        },
        created_at:{
          type: Sequelize.DATE,
