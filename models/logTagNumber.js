@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const logTagNumber = sequelize.define('log_tag_number'{
+  const logTagNumber = sequelize.define('log_tag_number',{
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,

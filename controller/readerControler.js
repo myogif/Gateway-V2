@@ -1,3 +1,4 @@
+const getMac = require('getmac');
 const {rfid_data} = require('../models');
 
 
@@ -11,7 +12,7 @@ exports.showReader = async (req, res) =>{
 }
 
 exports.updateReader = async (req, res) =>{
-    {reader, type, id_account} = req.body;
+    const {reader, type, id_account} = req.body;
 
     const result = await rfid_data.update({
         reader_id: reader,
@@ -24,3 +25,4 @@ exports.updateReader = async (req, res) =>{
         
     })
 }
+
