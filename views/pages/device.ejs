@@ -8,13 +8,13 @@
     <div class="row flex-nowrap">
       <%- include('../partials/sidebar'); %>
         <div class="col py-3">
-            <h4 class="bg-dark text-white">Device Information</h5>
+            <h4 class="bg-dark text-white">Device Info : </h5>
             <div class="card text-center">
                 <ul class="list-group ">
                   <li class="list-group-item" >
                     <div class="list-group-item-fixed borderless">
                       <strong class="list-group-left">Mac Address:</strong>
-                      <span class="list-group-right">e4:a4:71:50:89:3F</span>
+                      <span class="list-group-right"><%= result.mac %></span>
                     </div>
                   </li>
                   <li class="list-group-item">
@@ -26,7 +26,7 @@
                   <li class="list-group-item">
                     <div class="list-group-item-fixed">
                       <strong class="list-group-left">uptime:</strong>
-                      <span class="list-group-right">01:21:32</span>
+                      <span class="list-group-right"><%= result.uptime %></span>
                     </div>
                   </li>
                   <li class="list-group-item">

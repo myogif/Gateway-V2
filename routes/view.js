@@ -17,6 +17,8 @@ router.get('/api', (req, res) =>{
 router.get('/alarm', (req, res) =>{
   res.render('pages/alarm');
 });
+
+
 module.exports = router;
 
 

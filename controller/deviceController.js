@@ -25,12 +25,8 @@ exports.infoDevice = async(req, res) => {
     uptime : parsetoHHMMSS(uptime),
     totalMem: os.totalmem(),
     freeMem : os.freemem()
+  } 
 
-  }
-
-  return res.json({
-      status: 'success',
-      data: result
-  });
+  res.render('pages/device', {result: result});
   
 }
