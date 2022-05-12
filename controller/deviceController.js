@@ -1,3 +1,4 @@
+const {rfid_data} = require('../models');
 const getMac = require('getmac');
 const os = require('os');
 
@@ -17,6 +18,9 @@ const parsetoHHMMSS = (uptime) => {
 
 exports.infoDevice = async(req, res) => {
   const MacAddress = getMac.default();
+
+  const getDevice = await rfid_data.findAll();
+
   
   // todo 
 
@@ -29,19 +33,21 @@ exports.infoDevice = async(req, res) => {
 
   // Date Information
   let today = new Date();
+
   let dd = String(today.getDate()).padStart(2, '0');
   let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
   let yyyy = today.getFullYear();
-  today = `${dd} / ${mm}/ ${yyyy}`;
+  today = `${dd}-${mm}-${yyyy}`;
 
 
 
   const result = {
     mac : MacAddress,
-    localtime: today,
+    localtime: new Date().toISOString(),
     uptime : parsetoHHMMSS(uptime),
     freeMemory: freeMemory,
     memoryUsage: memoryUsage,
+    device: getDevice,
   } 
 
   res.render('pages/device', {result: result});

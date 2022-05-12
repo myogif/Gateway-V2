@@ -13,37 +13,37 @@
                 <ul class="list-group ">
                   <li class="list-group-item" >
                     <div class="list-group-item-fixed borderless">
-                      <strong class="list-group-left">Mac Address:</strong>
+                      <strong class="list-group-left">Mac Address : </strong>
                       <span class="list-group-right"><%= result.mac %></span>
                     </div>
                   </li>
                   <li class="list-group-item">
                     <div class="list-group-item-fixed">
-                      <strong class="list-group-left">localtime:</strong>
-                      <span class="list-group-right">13:49:04 </span>
+                      <strong class="list-group-left">localtime : </strong>
+                      <span class="list-group-right"><%= result.localtime %></span>
                     </div>
                   </li>
                   <li class="list-group-item">
                     <div class="list-group-item-fixed">
-                      <strong class="list-group-left">uptime:</strong>
+                      <strong class="list-group-left">uptime : </strong>
                       <span class="list-group-right"><%= result.uptime %></span>
                     </div>
                   </li>
                   <li class="list-group-item">
                     <div class="list-group-item-fixed">
-                      <strong class="list-group-left">CPU Usage:</strong>
+                      <strong class="list-group-left">CPU Usage : </strong>
                       <span class="list-group-right">24%</span>
                     </div>
                   </li>
                   <li class="list-group-item">
                     <div class="list-group-item-fixed">
-                      <strong class="list-group-left">Free Memory:</strong>
+                      <strong class="list-group-left">Free Memory : </strong>
                       <span class="list-group-right"><%= result.freeMemory %> %</span>
                     </div>
                   </li>
                   <li class="list-group-item">
                     <div class="list-group-item-fixed">
-                      <strong class="list-group-left">Memory Usage:</strong>
+                      <strong class="list-group-left">Memory Usage : </strong>
                       <span class="list-group-right"><%= result.memoryUsage %> %</span>
                     </div>
                   </li>
@@ -55,26 +55,26 @@
                     <ul class="list-group ">
                       <li class="list-group-item" >
                         <div class="list-group-item-fixed borderless">
-                          <strong class="list-group-left">IP Address:</strong>
+                          <strong class="list-group-left">IP Address : </strong>
                           <span class="list-group-right">192.168.0.101</span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="list-group-item-fixed">
-                          <strong class="list-group-left">Gateway:</strong>
+                          <strong class="list-group-left">Gateway : </strong>
                           <span class="list-group-right">192.168.0.1 </span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="list-group-item-fixed">
-                          <strong class="list-group-left">Subnet Mask:</strong>
+                          <strong class="list-group-left">Subnet Mask : </strong>
                           <span class="list-group-right">255.255.255.0</span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="list-group-item-fixed">
-                          <strong class="list-group-left">Server Access:</strong>
-                          <span class="list-group-right">UDP</span>
+                          <strong class="list-group-left">Server Access : </strong>
+                          <span class="list-group-right"> <%= result.device[0].mode %></span>
                         </div>
                       </li>
                     </ul>
