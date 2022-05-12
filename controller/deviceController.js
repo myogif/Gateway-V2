@@ -13,20 +13,38 @@ const parsetoHHMMSS = (uptime) => {
   
   return hh + ':' + mm + ':' + ss;
 }
+
+
 exports.infoDevice = async(req, res) => {
   const MacAddress = getMac.default();
   
   // todo 
-  const uptime = os.uptime();
+
+  //Device Information 
+  let uptime = os.uptime();
+  let freemem = os.totalmem() - os.freemem();
+  let freeMemory =parseInt((freemem / os.totalmem()) * 100);
+  let memoryUsage = 100 - freeMemory;
+
+
+  // Date Information
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, '0');
+  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let yyyy = today.getFullYear();
+  today = `${dd} / ${mm}/ ${yyyy}`;
+
+
 
   const result = {
     mac : MacAddress,
-    localtime: new Date().toTimeString(),
+    localtime: today,
     uptime : parsetoHHMMSS(uptime),
-    totalMem: os.totalmem(),
-    freeMem : os.freemem()
+    freeMemory: freeMemory,
+    memoryUsage: memoryUsage,
   } 
 
   res.render('pages/device', {result: result});
+  //res.send(result);
   
 }
