@@ -50,7 +50,7 @@ exports.infoDevice = async(req, res) => {
     device: getDevice,
   } 
 
-  res.render('pages/device', {result: result});
+  res.render('pages/index', {result: result});
   //res.send(result);
   
 }

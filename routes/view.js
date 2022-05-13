@@ -1,12 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) =>{
-  res.render('pages/index');
-});
+const deviceController = require('../controller/deviceController');
 
-router.get('/setting', (req, res) =>{
-  res.render('pages/setting');
+
+router.get('/', deviceController.infoDevice);
+
+
+router.get('/udp', (req, res) =>{
+  res.render('pages/udp');
 });
 
 router.get('/api', (req, res) =>{

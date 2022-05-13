@@ -7,22 +7,29 @@
   <div class="row flex-nowrap">
       <%- include('../partials/sidebar'); %>
       <div class="col py-5">
-        <h4 class="bg-dark text-white">Alarm Setting : </h5>
+        <h4 class="bg-dark text-white">UDP Setting : </h5>
           <br><br><br>
           <div class="container center_div">
             <form>
-              <div class="row mb-3">
-                  <label for="inputURL" class="col-sm-1 col-form-label">URL : </label>
+              <div class="row mb-4">
+                  <label for="ip_server" class="col-sm-1 col-form-label">IP Server : </label>
                   <div class="col-sm-5">
-                      <input type="text" class="form-control" id="inputURL" placeholder="URL ">
+                      <input type="text" class="form-control" id="ip_server" placeholder="151.122.290.101 ">
                   </div>
               </div>
               <div class="row mb-3">
-                  <label for="api_key" class="col-sm-1 col-form-label">api_key : </label>
+                  <label for="port" class="col-sm-1 col-form-label">PORT : </label>
                   <div class="col-sm-5">
-                      <input type="text" class="form-control" id="" placeholder="API key ">
+                      <input type="text" class="form-control" id="port" placeholder="8080 ">
                   </div>
               </div>
+              <div class="row mb-3">
+                <label for="device_id" class="col-sm-1 col-form-label">Device ID : </label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="device_id" placeholder="000uxht ">
+                </div>
+            </div>
+
               <div class="row">
                   <div class="col-sm-1 offset-sm-1">
                       <button type="submit" class="btn btn-primary">Save </button>

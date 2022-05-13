@@ -3,26 +3,34 @@
 <head>
   <%- include('../partials/head'); %>
 </head>
-<body class="container">
-
-  <%- include('../partials/sidebar'); %>
-  <form action="">
-    <div class="main">
-      <h1>Register</h1>
-      <p>Please fill in this form to setting a reader</p>
-      <hr>
-  
-      <label for="url"><b>URL  </b></label>
-      <input type="text" placeholder="Enter Url" name="url" id="url" required>
-  
-      <label for="api_key"><b>API Key</b></label>
-      <input type="text" placeholder="Enter Port" name="api_key" id="api_key" >
-  
-  
-      <button type="submit" class="Savebtn">Save</button>
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+      <%- include('../partials/sidebar'); %>
+      <div class="col py-5">
+        <h4 class="bg-dark text-white">API Setting : </h5>
+          <br><br><br>
+          <div class="container center_div">
+            <form>
+              <div class="row mb-4">
+                  <label for="inputURL" class="col-sm-1 col-form-label">URL : </label>
+                  <div class="col-sm-5">
+                      <input type="text" class="form-control" id="inputURL" placeholder="URL ">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <label for="api_key" class="col-sm-1 col-form-label">api_key : </label>
+                  <div class="col-sm-5">
+                      <input type="text" class="form-control" id="" placeholder="API key ">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-1 offset-sm-1">
+                      <button type="submit" class="btn btn-primary">Save </button>
+                  </div>
+              </div>
+            </form>
+          </div>
+      </div>
     </div>
-  </form>
-
-
-</body>
+  </div>  
 </html>
