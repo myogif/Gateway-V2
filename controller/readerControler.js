@@ -15,7 +15,7 @@ exports.UDP = async (req, res) =>{
     //const id = rfid_data.findByPk(1);
     const result = await rfid_data.update({
         reader_id: reader,
-        mode: 'udp',
+        mode: 'UDP',
         port: port,
         ip_server: ip_server
         }, {where : {id: 1}}

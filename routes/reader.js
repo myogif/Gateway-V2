@@ -8,8 +8,8 @@ router.get('/', readerController.showReader);
 //   res.render('views/index');
 // })
 
-router.put('/udp', readerController.UDP);
-router.put('/api', readerController.API);
-router.put('/alarm', readerController.ALARM);
+router.post('/udp', readerController.UDP);
+router.post('/api', readerController.API);
+router.post('/alarm', readerController.ALARM);
 
 module.exports = router;

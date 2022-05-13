@@ -23,7 +23,7 @@ app.use('/js', express.static(path.join(__dirname, 'public/javascripts')));
 
 app.use('/', viewRouter);
 app.use('/users', usersRouter);
-app.use('/reader',readerRouter)
+app.use('/',readerRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
