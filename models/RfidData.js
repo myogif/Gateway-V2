@@ -22,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: true
         },
+        api_key:{
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         mode:{
             type: DataTypes.STRING,
             allowNull: false

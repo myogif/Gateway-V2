@@ -25,6 +25,10 @@ module.exports = {
          type: Sequelize.STRING,
          allowNull: true
        },
+       api_key: {
+         type: Sequelize.STRING,
+         allowNull: true
+       },
        mode:{
          type: Sequelize.STRING,
          allowNull: false
