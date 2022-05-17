@@ -1,4 +1,5 @@
 const {rfid_data} = require('../models');
+const deviceController = require('../controller/deviceController');
 
 
 exports.showReader = async (req, res) =>{
@@ -13,7 +14,7 @@ exports.showReader = async (req, res) =>{
 exports.UDP = async (req, res) =>{
     const {reader, port, ip_server} = req.body;
     //const id = rfid_data.findByPk(1);
-    const result = await rfid_data.update({
+    const updated = await rfid_data.update({
         reader_id: reader,
         mode: 'UDP',
         port: port,
@@ -21,41 +22,39 @@ exports.UDP = async (req, res) =>{
         }, {where : {id: 1}}
     );
 
-    data = await rfid_data.findAll();
-    return res.json({
-        status: 'success',
-        data: data
-    })
+    //data = await rfid_data.findAll();
+    const result = await deviceController.infoDevice();
+    res.render('pages/index', {result : result});
+    // return res.json({
+    //     status: 'success',
+    //     data: data
+    // })
 }
 
 
 exports.API = async (req, res) =>{
     const {api_server, api_key} = req.body;
-    const result = await rfid_data.update({
+    const updated = await rfid_data.update({
         mode: 'api',
         api_server: api_server,
+        api_key: api_key
         }, {where : {id: 1}}
     );
+    const result = await deviceController.infoDevice();
+    res.render('pages/index', {result : result});
 
-    data = await rfid_data.findAll();
-    return res.json({
-        status: 'success',
-        data: data
-    });
 }
 
 
 exports.ALARM = async (req, res) =>{
     const {api_server, api_key} = req.body;
-    const result = await rfid_data.update({
+    const updated = await rfid_data.update({
         mode: 'alarm',
         api_server: api_server,
+        api_key: api_key
         }, {where : {id: 1}}
     );
 
-    data = await rfid_data.findAll();
-    return res.json({
-        status: 'success',
-        data: data
-    });
+    const result = await deviceController.infoDevice();
+    res.render('pages/index', {result : result});
 }
