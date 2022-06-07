@@ -36,7 +36,7 @@ async function postData(url, data, api_key){
     }
 }
 
-function alarmMode(url, data, api_key){
+async function alarmMode(url, data, api_key){
     try{
         config = {
             api_key : api_key
