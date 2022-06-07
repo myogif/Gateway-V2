@@ -17,6 +17,10 @@ module.exports = {
          type: Sequelize.STRING,
          allowNull: true
        },
+       udp_port:{
+         type: Sequelize.STRING,
+         allowNull:true
+       },
        ip_server: {
          type: Sequelize.STRING,
          allowNull: true
