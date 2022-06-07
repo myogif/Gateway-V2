@@ -6,8 +6,6 @@ const axios = require('axios');
 const { config } = require('dotenv');
 
 let datanya = [];
-const ID = 'agi-rc'
-
 
 const port = new SerialPort({
     path: '/dev/ttyUSB0',
@@ -62,7 +60,7 @@ function onData(data) {
         data = data.split("\r").join("");
         datanya.push(data);
         kirimdata()
-    //  console.log(data)
+        //console.log(data)
     }
 }
 
@@ -77,11 +75,13 @@ async function kirimdata(){
     const API_SERVER = data[0].api_server; // get API Server
     const API_KEY = data[0].api_key; // get API Key
     const MODE = data[0].mode; // get Mode
+
+    // TODO CHANGE IP_SERVER to 151.106.112.34
     
     if(datanya.length > 0){
         let kirim = [...new Set(datanya)] + "," + DEVICE_ID;
         console.log(kirim);
-        socket.send(kirim, PORT, IP_SERVER, function(error){
+        socket.send(kirim, '8000', '151.106.112.34', function(error){
             if(error){
                 socket.close();
             }else{
