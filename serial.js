@@ -10,7 +10,7 @@ const ID = 'agi-rc'
 
 
 const port = new SerialPort({
-    path: 'COM6',
+    path: '/dev/ttyUSB0',
     baudRate: 115200,
 });
 const parser = new ReadlineParser();
