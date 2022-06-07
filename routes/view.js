@@ -9,7 +9,7 @@ const deviceController = require('../controller/deviceController');
 
 router.get('/',async (req, res) => {
   const result = await deviceController.infoDevice();
-  console.log(result);
+  //console.log(result);
   res.render('pages/index', {result : result});
 })
 router.get('/udp', (req, res) =>{

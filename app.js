@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+
 const usersRouter = require('./routes/users');
 const readerRouter = require('./routes/reader');
 const viewRouter = require('./routes/view');
@@ -30,6 +31,9 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+
+
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -40,5 +44,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// Socket 
+
 
 module.exports = app;
