@@ -65,6 +65,12 @@ function onData(data) {
 }
 
 
+const dataDevice = async (){
+    const deviceInfo = await rfid_data.findAll();
+    const data = deviceInfo.map(item => item.dataValues);
+    const Device_ID = data[0].reader_id;
+    reutr
+}
 
 async function kirimdata(){
     const  deviceInfo = await rfid_data.findAll(); // Query Database
