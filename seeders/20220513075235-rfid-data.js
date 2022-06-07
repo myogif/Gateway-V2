@@ -8,7 +8,7 @@ module.exports = {
       reader_id: 'uux180t',
       port: '8080',
       udp_port: '8000',
-      ip_server: 'http://151.106.112.34/',
+      ip_server: '151.106.112.34',
       api_server: 'http://151.106.112.34/api/v1/test',
       api_key: 'sadih2i%219213123$$$ksadwqe',
       mode: 'UDP',
