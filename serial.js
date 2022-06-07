@@ -65,11 +65,11 @@ function onData(data) {
 }
 
 
-const dataDevice = async (){
+const dataDevice = async () => {
     const deviceInfo = await rfid_data.findAll();
     const data = deviceInfo.map(item => item.dataValues);
     const Device_ID = data[0].reader_id;
-    reutr
+    return Device_ID; 
 }
 
 async function kirimdata(){
@@ -77,6 +77,7 @@ async function kirimdata(){
     const data = deviceInfo.map(item => item.dataValues); // return Array
     const DEVICE_ID = data[0].reader_id; // get Device ID
     const PORT = data[0].port; // get Port
+    const UDP_PORT = data[0].UDP_PORT; // PORT UDP Server
     const IP_SERVER = data[0].ip_server; // get IP Server
     const API_SERVER = data[0].api_server; // get API Server
     const API_KEY = data[0].api_key; // get API Key
