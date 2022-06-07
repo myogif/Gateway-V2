@@ -14,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: true
         },
+        udp_port:{
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         ip_server: {
             type: DataTypes.STRING,
             allowNull: true
