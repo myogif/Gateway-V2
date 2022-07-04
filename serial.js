@@ -8,7 +8,7 @@ const { config } = require('dotenv');
 let datanya = [];
 
 const port = new SerialPort({
-    path: '/dev/ttyUSB0',
+    path: 'COM6',
     baudRate: 115200,
 });
 const parser = new ReadlineParser();
@@ -43,6 +43,14 @@ async function alarmMode(url, data, api_key){
             rfid_code : data,
         };
         let res = await axios.post(url, body, config);
+        let isAlarm = res.data.alarm;
+        if(isAlarm){
+            console.log("Turn On Alarm ")
+            //turnOnAlrm(alarm);
+        }else{
+            console.log("Turn OFF alarm")
+        }
+
         // todo 
         // Logic Alarm 
     }catch{
@@ -86,14 +94,20 @@ async function kirimdata(){
     // TODO CHANGE IP_SERVER to 151.106.112.34
     
     if(datanya.length > 0){
-        let kirim = [...new Set(datanya)] + "," + DEVICE_ID;
-        console.log(kirim);
-        socket.send(kirim, '8000', '151.106.112.34', function(error){
-            if(error){
-                socket.close();
-            }else{
-                datanya = [];
-            }
-        });
+        if (MODE == 'UDP'){
+            let kirim = [...new Set(datanya)] + "," + DEVICE_ID;
+            console.log(kirim);
+            socket.send(kirim, PORT, IP_SERVER, function(error){
+                if(error){
+                    socket.close();
+                }else{
+                    datanya = [];
+                }
+            });
+        }else if(MODE == 'alarm'){
+            let kirim = [...new Set(datanya)];
+            console.log(kirim);
+            alarmMode(API_SERVER, kirim, API_KEY);
+        }
     }
 }
